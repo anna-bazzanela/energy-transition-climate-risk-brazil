@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite this software when using the observed-trend workflow."
+type: software
+title: "Observed Climate Extremes and Electricity Grid Exposure in Brazil"
+authors:
+  - family-names: "Bazzanela"
+    given-names: "Anna Carolina"
+version: 0.1.0
+abstract: >-
+  Research code for calculating and mapping observed ETCCDI index trends
+  in Brazil using Sen slopes and the original Mann-Kendall test, with
+  optional electricity infrastructure overlays. This repository covers
+  the observed-trend component, not the full CMIP6 projection workflow.
+keywords:
+  - climate extremes
+  - ETCCDI
+  - Brazil
+  - electricity grids
+  - Mann-Kendall
+  - Sen slope
+# Add repository-code, date-released, DOI, ORCID and additional software authors
+# only after verifying those details. No manuscript DOI is assumed.

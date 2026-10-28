@@ -1,0 +1,77 @@
+# Copy to config.toml and edit. Paths are relative to this configuration file.
+# These are study settings, not confirmation that input data were supplied.
+[paths]
+annual_pattern = "demo_data/{index}_annual_obs.nc"
+output_dir = "demo_outputs"
+country_shape = "demo_data/synthetic_country.geojson"
+# If the country layer contains several countries, set mask.column/mask.value.
+regions_shape = ""
+transmission_shape = ""
+substations_shape = ""
+# plot-only mode reads these; change to outputs/... to plot new computations.
+trend_pattern = "demo_outputs/trend/{index}_dec_trend_BR.nc"
+pvalue_pattern = "demo_data/legacy_pvalues/{index}_dec_pvalue_BR.nc"
+
+[mask]
+column = ""
+value = ""
+
+[analysis]
+indices = ["TNx", "TXx"]
+start_year = 1961
+end_year = 2023
+alpha = 0.05
+# New configurable data-coverage threshold; not specified in the source script.
+min_valid_years = 30
+extent = [-75.0, -30.0, -35.0, 10.0]
+
+[precomputed]
+trend_variable = "trends"
+pvalue_variable = "pvalues"
+# Use legacy-nonsignificant ONLY for original files with p <= alpha replaced by NaN.
+pvalue_semantics = "legacy-nonsignificant"
+
+[plot]
+hatch = "significant"
+dpi = 300
+font_family = "DejaVu Serif"
+# Natural Earth layers may be downloaded by Cartopy on the first map run.
+# Set false for offline maps using only the supplied GIS layers.
+natural_earth = false
+
+[indices.TNx]
+variable = "TNx"
+units = "degC"
+trend_label = "°C/decade"
+palette = "temperature"
+levels = [-1.0, -0.8, -0.6, -0.4, -0.2, 0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+
+[indices.TXx]
+variable = "TXx"
+units = "degC"
+trend_label = "°C/decade"
+palette = "temperature"
+levels = [-1.0, -0.8, -0.6, -0.4, -0.2, 0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+
+# Optional settings for annual indices already computed upstream.
+# Add these index names to analysis.indices only when the corresponding files exist.
+[indices.PRCPTOT]
+variable = "PRCPTOT"
+units = "mm"
+trend_label = "mm/decade"
+palette = "precipitation"
+levels = [-120, -80, -60, -40, -20, 0, 20, 40, 60, 80, 120]
+
+[indices.R95p]
+variable = "R95p"
+units = "mm"
+trend_label = "mm/decade"
+palette = "precipitation"
+levels = [-120, -80, -60, -40, -20, 0, 20, 40, 60, 80, 120]
+
+[indices.CDD]
+variable = "CDD"
+units = "days"
+trend_label = "days/decade"
+palette = "dry"
+levels = [-10, -8, -6, -4, -2, -1, 0, 1, 2, 4, 6, 8, 10]

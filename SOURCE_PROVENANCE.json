@@ -1,0 +1,9 @@
+{
+  "supplied_source_filename": "spatial_trends_ppe.py",
+  "supplied_source_sha256": "4bbdc601685b6c5e7c040a8f60c460ea3e9a40d45e35e11b2541272d115a3109",
+  "supplied_methodology_filename": "Methodology_EnergyTransition-Paper.docx",
+  "supplied_methodology_sha256": "96d7eef0e809c5cc8334a2e488941db851862c09053490fa198a00657b3bba99",
+  "reference_copy": "legacy/spatial_trends_ppe_reference.py",
+  "reference_copy_is_byte_identical": false,
+  "sanitization": "Local paths replaced; comments and identifiers translated. The source document is not redistributed."
+}
